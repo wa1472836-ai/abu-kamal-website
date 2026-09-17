@@ -178,6 +178,71 @@
             font-size: 1.1rem;
         }
 
+        /* Special Offers Section */
+        .offers-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            border: 2px solid var(--accent);
+            margin-bottom: 60px;
+        }
+
+        .offers-img {
+            flex: 1 1 400px;
+            max-height: 400px;
+            overflow: hidden;
+        }
+
+        .offers-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .offers-content {
+            flex: 1 1 400px;
+            padding: 40px;
+            text-align: right;
+        }
+
+        .offers-badge {
+            background: #e74c3c;
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .offers-content h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .offers-price-tag {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .offers-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
         /* Features Cards Grid */
         .cards-grid {
             display: grid;
@@ -396,6 +461,7 @@
             .hero p { font-size: 1rem; }
             .info-box { padding: 30px 20px; }
             .btn { width: 100%; justify-content: center; }
+            .offers-card { flex-direction: column; }
         }
     </style>
 </head>
@@ -410,6 +476,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#offers">العروض الخاصة</a></li>
                 <li><a href="#facilities">المرافق</a></li>
                 <li><a href="#prices">الأسعار</a></li>
                 <li><a href="#contact">الحجز والموقع</a></li>
@@ -425,7 +492,7 @@
             <p>وجهتك الأولى للاسترخاء والأجواء العائلية الخصوصية والفاخرة</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-accent"><i class="fa-solid fa-calendar-check"></i> احجز الآن</a>
-                <a href="#facilities" class="btn btn-outline"><i class="fa-solid fa-compass"></i> استكشف المرافق</a>
+                <a href="#offers" class="btn btn-outline"><i class="fa-solid fa-tags"></i> استكشف العروض</a>
             </div>
         </div>
     </section>
@@ -433,11 +500,36 @@
     <!-- Main Content Container -->
     <div class="container">
 
+        <!-- Special Offers Section -->
+        <section id="offers">
+            <div class="section-header">
+                <h2>العروض والخصومات الخاصة</h2>
+                <p>استمتع بأفضل العروض الحصرية للعائلات والمجموعات</p>
+            </div>
+
+            <div class="offers-card">
+                <div class="offers-img">
+                    <img src="https://i.ibb.co/cS9qxLG8/image.jpg" alt="عرض المسبح الداخلي استراحة أبو كمال">
+                </div>
+                <div class="offers-content">
+                    <span class="offers-badge"><i class="fa-solid fa-fire"></i> عرض خاص محدود</span>
+                    <h3>عرض المسبح الداخلي المغلق</h3>
+                    <div class="offers-price-tag">
+                        <i class="fa-solid fa-clock"></i> 3 ساعات بـ 20 دينار فقط!
+                    </div>
+                    <p>استمتع بـ 3 ساعات من الخصوصية التامة والاسترخاء العائلي في المسبح الداخلي المجهز بالكامل بأفضل سعر.</p>
+                    <a href="https://wa.me/962795143738?text=مرحبا،%20أود%20حجز%20عرض%20المسبح%20الداخلي%20(3%20ساعات%20بـ%2020%20دينار)" target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> احجز هذا العرض عبر الواتساب
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Facilities Section -->
         <section id="facilities">
             <div class="section-header">
                 <h2>المرافق والخدمات</h2>
-                <p>مرافق مصممة بعناية لتلبي جميع احتياجاتكم وااحتياجات أطفالكم</p>
+                <p>مرافق مصممة بعناية لتلبي جميع احتياجاتكم واحتياجات أطفالكم</p>
             </div>
 
             <div class="cards-grid">
@@ -517,8 +609,8 @@
                     <div class="price-card">
                         <div class="price-icon"><i class="fa-solid fa-person-swimming"></i></div>
                         <h3>المسبح الداخلي</h3>
-                        <p style="color:var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">خصوصية بالساعة</p>
-                        <div class="price">15 <span>JD / ساعة</span></div>
+                        <p style="color:var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">عرض خاص (3 ساعات)</p>
+                        <div class="price">20 <span>JD</span></div>
                     </div>
 
                     <div class="price-card">
@@ -559,3 +651,4 @@
     </footer>
 
 </body>
+</html>
