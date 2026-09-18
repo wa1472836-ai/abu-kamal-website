@@ -71,7 +71,7 @@
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             list-style: none;
         }
 
@@ -79,7 +79,7 @@
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.05rem;
+            font-size: 1rem;
             transition: var(--transition);
         }
 
@@ -365,6 +365,92 @@
             font-weight: 400;
         }
 
+        /* FAQ & Rules Section */
+        .faq-section {
+            margin-top: 80px;
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 22px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            user-select: none;
+            background: var(--white);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: #fcfcfc;
+            color: var(--primary-light);
+        }
+
+        .faq-question i {
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            background: #fafafa;
+            border-top: 1px solid #f0f0f0;
+            padding: 0 25px;
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 250px;
+            padding: 20px 25px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .rules-list {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .rules-list li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 10px;
+        }
+
+        .rules-list li::before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
         /* Social Banner Section */
         .social-box {
             background: #ffffff;
@@ -584,9 +670,10 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#offers">العروض الخاصة</a></li>
+                <li><a href="#offers">العروض</a></li>
                 <li><a href="#facilities">المرافق</a></li>
                 <li><a href="#prices">الأسعار</a></li>
+                <li><a href="#faq">الأسئلة والتعليمات</a></li>
                 <li><a href="#contact">الحجز والموقع</a></li>
                 <li><a href="#feedback">الاقتراحات والشكاوى</a></li>
             </ul>
@@ -732,6 +819,66 @@
             </div>
         </section>
 
+        <!-- FAQ & Rules Section -->
+        <section id="faq" class="faq-section">
+            <div class="section-header">
+                <h2>تعليمات وإرشادات الاستراحة</h2>
+                <p>إجابات على الأسئلة الشائعة وقواعد السلامة لتجربة ممتازة</p>
+            </div>
+
+            <div class="faq-container">
+                <!-- Q1 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span><i class="fa-regular fa-circle-question" style="margin-left: 8px;"></i> هل يلزم حجز مسبق للمسبح الداخلي؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، يفضل ويسعدنا دائماً الحجز المسبق للمسبح الداخلي لتأكيد الموعد المناسب لك ولعائلتك ولضمان جاهزية المسبح ونظافته التامة قبل وصولكم.</p>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span><i class="fa-regular fa-clock" style="margin-left: 8px;"></i> ما هي أوقات العمل الرسمية؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نستقبلكم يومياً طيلة أيام الأسبوع من الساعة <strong>12:00 ظهراً</strong> وحتى الساعة <strong>12:00 منتصف الليل</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span><i class="fa-solid fa-user-shield" style="margin-left: 8px;"></i> هل المسبح الداخلي مغلق ومخصص بالكامل للعائلات؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>بالتأكيد، المسبح الداخلي مصمم بالكامل ليوفر أعلى مستويات الخصوصية والراحة التامة للعائلات، حيث يتم إغلاقه وخصخصته بالكامل للجهة الحاجزة خلال فترة حجزها.</p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span><i class="fa-solid fa-pump-soap" style="margin-left: 8px;"></i> ما هي شروط السلامة والنظافة الخاصة بالمسابح؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <ul class="rules-list">
+                            <li>التأكد من ارتداء ملابس السباحة المخصصة.</li>
+                            <li>مراقبة الأطفال بشكل مباشر ودائم أثناء التواجد بالقرب من المسابح.</li>
+                            <li>الاستحمام قبل الدخول إلى المسبح لضمان أعلى مستويات النظافة والتعقيم.</li>
+                            <li>يمنع إدخال الأطعمة أو المشروبات الزجاجية إلى داخل أسطح المسابح.</li>
+                            <li>يتم تعقيم وفلترة مياه المسابح بانتظام بأحدث التقنيات لضمان صحتكم وسلامتكم.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Social Media Section -->
         <div class="social-box">
             <div style="display: flex; gap: 15px; font-size: 2.5rem;">
@@ -815,8 +962,15 @@
         <p>جميع الحقوق محفوظة © استراحة أبو كمال 2026</p>
     </footer>
 
-    <!-- JavaScript for Feedback Form Submission -->
+    <!-- JavaScript Functions -->
     <script>
+        // Toggle FAQ Answers
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // Send Feedback via WhatsApp
         function sendFeedback(e) {
             e.preventDefault();
             const name = document.getElementById('fb-name').value;
