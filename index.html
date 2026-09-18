@@ -422,6 +422,59 @@
             margin-bottom: 30px;
         }
 
+        /* Suggestions & Complaints Form */
+        .feedback-section {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 50px 40px;
+            margin-top: 60px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .feedback-form {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: right;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1.5px solid #e0e0e0;
+            font-size: 1rem;
+            font-family: 'Tajawal', sans-serif;
+            transition: var(--transition);
+            background-color: #fafafa;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            background-color: var(--white);
+            box-shadow: 0 0 0 4px rgba(15, 61, 46, 0.1);
+        }
+
         /* Buttons Style */
         .btn {
             display: inline-flex;
@@ -514,6 +567,7 @@
             .hero h1 { font-size: 2.3rem; }
             .hero p { font-size: 1rem; }
             .info-box { padding: 30px 20px; }
+            .feedback-section { padding: 30px 20px; }
             .btn { width: 100%; justify-content: center; }
             .offers-card { flex-direction: column; }
         }
@@ -534,6 +588,7 @@
                 <li><a href="#facilities">المرافق</a></li>
                 <li><a href="#prices">الأسعار</a></li>
                 <li><a href="#contact">الحجز والموقع</a></li>
+                <li><a href="#feedback">الاقتراحات والشكاوى</a></li>
             </ul>
         </div>
     </nav>
@@ -715,12 +770,70 @@
             </div>
         </section>
 
+        <!-- Suggestions & Complaints Section (Last Option) -->
+        <section id="feedback" class="feedback-section">
+            <div class="section-header" style="margin-bottom: 30px;">
+                <h2>الاقتراحات والشكاوى</h2>
+                <p>يهمنا رأيك لتطوير خدماتنا ومرافقنا باستمرار</p>
+            </div>
+
+            <form class="feedback-form" onsubmit="sendFeedback(event)">
+                <div class="form-group">
+                    <label for="fb-name">الاسم الكريم:</label>
+                    <input type="text" id="fb-name" placeholder="أدخل اسمك" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fb-phone">رقم الهاتف:</label>
+                    <input type="tel" id="fb-phone" placeholder="07XXXXXXXX" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fb-type">نوع الرسالة:</label>
+                    <select id="fb-type">
+                        <option value="اقتراح">اقتراح لتطوير الخدمات</option>
+                        <option value="شكوى">تقديم شكوى</option>
+                        <option value="استفسار">استفسار عام</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fb-message">التفاصيل / نص الرسالة:</label>
+                    <textarea id="fb-message" rows="5" placeholder="اكتب ملاحظتك، اقتراحك أو تفاصيل الشكوى هنا..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-accent" style="justify-content: center; width: 100%; margin-top: 10px;">
+                    <i class="fa-solid fa-paper-plane"></i> إرسال عبر الواتساب Direct
+                </button>
+            </form>
+        </section>
+
     </div>
 
     <!-- Footer -->
     <footer>
         <p>جميع الحقوق محفوظة © استراحة أبو كمال 2026</p>
     </footer>
+
+    <!-- JavaScript for Feedback Form Submission -->
+    <script>
+        function sendFeedback(e) {
+            e.preventDefault();
+            const name = document.getElementById('fb-name').value;
+            const phone = document.getElementById('fb-phone').value;
+            const type = document.getElementById('fb-type').value;
+            const message = document.getElementById('fb-message').value;
+
+            const text = `مرحباً، لدي ${type}:\n\n` +
+                         `👤 *الاسم:* ${name}\n` +
+                         `📱 *رقم الهاتف:* ${phone}\n` +
+                         `📌 *نوع الملاحظة:* ${type}\n` +
+                         `📝 *التفاصيل:* ${message}`;
+
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/962795143738?text=${encodedText}`, '_blank');
+        }
+    </script>
 
 </body>
 </html>
