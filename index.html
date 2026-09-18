@@ -79,7 +79,7 @@
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: var(--transition);
         }
 
@@ -363,6 +363,113 @@
             font-size: 0.9rem;
             color: var(--text-muted);
             font-weight: 400;
+        }
+
+        /* Reviews Section */
+        .reviews-summary {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .rating-num {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stars-gold {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin: 8px 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .reviewer-source {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .review-text {
+            color: var(--text-dark);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .review-img {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         /* FAQ & Rules Section */
@@ -656,6 +763,7 @@
             .feedback-section { padding: 30px 20px; }
             .btn { width: 100%; justify-content: center; }
             .offers-card { flex-direction: column; }
+            .reviews-summary { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -673,6 +781,7 @@
                 <li><a href="#offers">العروض</a></li>
                 <li><a href="#facilities">المرافق</a></li>
                 <li><a href="#prices">الأسعار</a></li>
+                <li><a href="#reviews">آراء الزوار</a></li>
                 <li><a href="#faq">الأسئلة والتعليمات</a></li>
                 <li><a href="#contact">الحجز والموقع</a></li>
                 <li><a href="#feedback">الاقتراحات والشكاوى</a></li>
@@ -815,6 +924,109 @@
                         <p style="color:var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">تذكرة للأطفال</p>
                         <div class="price">1 <span>JD / للطفل</span></div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews Section -->
+        <section id="reviews" style="margin-top: 80px;">
+            <div class="section-header">
+                <h2>آراء وانطباعات الزوار</h2>
+                <p>نفتخر بتقديم أفضل تجربة استجمام لعائلتكم - تجارب زوارنا الحقيقية</p>
+            </div>
+
+            <!-- Overall Rating Summary Card -->
+            <div class="reviews-summary">
+                <div style="text-align: center;">
+                    <div class="rating-num">4.9</div>
+                    <div class="stars-gold">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="color: var(--text-muted); font-weight: 500;">متوسط تقييم أكثر من 150+ زائر</p>
+                </div>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                    <div style="text-align: center; border-left: 1px solid #ddd; padding-left: 20px;">
+                        <i class="fa-brands fa-google" style="font-size: 2rem; color: #4285F4;"></i>
+                        <p style="font-weight: 700; margin-top: 5px;">Google Maps</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">تقييم 4.9 / 5.0</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fa-brands fa-facebook" style="font-size: 2rem; color: #1877f2;"></i>
+                        <p style="font-weight: 700; margin-top: 5px;">Facebook</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">توصيات 100%</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://maps.app.goo.gl/r7VRVNpuErmTjGBQ7" target="_blank" class="btn btn-outline" style="background: var(--primary); color: white;">
+                        <i class="fa-solid fa-star"></i> أضف تقييمك على جوجل
+                    </a>
+                </div>
+            </div>
+
+            <!-- Reviews Cards Grid -->
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">أ.م</div>
+                                <div>
+                                    <div class="reviewer-name">أبو محمد الزعبي</div>
+                                    <div class="reviewer-source"><i class="fa-brands fa-google" style="color: #4285F4;"></i> عبر خرائط جوجل</div>
+                                </div>
+                            </div>
+                            <div class="stars-gold" style="font-size: 1rem;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"ما شاء الله المكان رائع جداً والخصوصية بالمسبح الداخلي ممتازة 100%. النظافة عالية والمعاملة راقية جداً من القائمين على الاستراحة. بالتأكيد سنكرر الزيارة."</p>
+                    </div>
+                    <img src="https://i.ibb.co/LDgCdsgB/image.jpg" alt="تجربة المسبح الداخلي" class="review-img">
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar" style="background: #e67e22;">أم س</div>
+                                <div>
+                                    <div class="reviewer-name">أم سارَة العبادي</div>
+                                    <div class="reviewer-source"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> عبر فيسبوك</div>
+                                </div>
+                            </div>
+                            <div class="stars-gold" style="font-size: 1rem;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"أجواء عائلية بامتياز! الأطفال استمتعوا جداً بمنطقة الألعاب والمسبح الخارجي والنوافير. السعر ممتاز مقارنة بالخدمات والنظافة والترتيب."</p>
+                    </div>
+                    <img src="https://i.ibb.co/PZBTJ7qM/image.jpg" alt="تجربة ألعاب الأطفال" class="review-img">
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar" style="background: #27ae60;">م.ع</div>
+                                <div>
+                                    <div class="reviewer-name">مهندس عمر المجالي</div>
+                                    <div class="reviewer-source"><i class="fa-brands fa-google" style="color: #4285F4;"></i> عبر خرائط جوجل</div>
+                                </div>
+                            </div>
+                            <div class="stars-gold" style="font-size: 1rem;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"استأجرنا المجلس الخليجي مع المسبح الداخلي لحفلة عائلية صغيرة وكانت السهرة ولا أروع، الإضاءة الليلية والنوافير تعطي جو ساحر. شكراً أبو كمال."</p>
+                    </div>
+                    <img src="https://i.ibb.co/JwNQxs9j/image.jpg" alt="تجربة الجلسات والنافورة" class="review-img">
                 </div>
             </div>
         </section>
